@@ -1,7 +1,11 @@
 For scaloGramDemo.py:
+
 Input parameters:
+
         X  : The input signal to be analyzed (N by 1 array).
+        
        fs  : The sampling frequency of signal (in Hz).
+       
        flo  : Lower bound for spectrum analysis.
       fup  : Upper bound for spectrum analysis.
      fres  : Frequency resolution in the spectrum.
