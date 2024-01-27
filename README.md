@@ -1,5 +1,4 @@
 For scaloGramDemo.py:
-
 Input parameters:
         X  : The input signal to be analyzed (N by 1 array).
        fs  : The sampling frequency of signal (in Hz).
