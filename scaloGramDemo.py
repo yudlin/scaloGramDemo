@@ -2,8 +2,7 @@ def scaloGramDemo(X, fs, flo, fup, fres, sFig=True):
     '''
     This program is used to derive the scalogram and time-averaged spectrum by
     complex Morlet wavelet.
-    Designed by Yue-Der Lin on July 27, 2023.
-
+    Designed by Yue-Der Lin on Nov. 19, 2023.
     Input parameters:
         X  : The input signal to be analyzed (N by 1 array).
        fs  : The sampling frequency of signal (in Hz).
@@ -21,8 +20,13 @@ def scaloGramDemo(X, fs, flo, fup, fres, sFig=True):
       import scipy.io as load
       Signal = load.loadmat('SCGwithResp.mat')
       resp = Signal['resp'].ravel()
+      scg = Signal['scg'].ravel()
+      from scipy import signal
+      resp = signal.resample(resp, int(len(resp)*5/100))
+      scg = signal.resample(scg, int(len(scg)*5/100))
       from scaloGramDemo import scaloGramDemo
-      Ta, Fa, St, PSD = scaloGramDemo(resp, 100, 0.1, 0.6, 0.005, True)
+      Ta1, Fa1, St1, PSD1 = scaloGramDemo(resp, 5, 0.05, 0.6, 0.005, True)
+      Ta2, Fa2, St2, PSD2 = scaloGramDemo(scg, 5, 0.05, 0.6, 0.005, True)
     '''
     # Import modules:
     import matplotlib
@@ -66,7 +70,7 @@ def scaloGramDemo(X, fs, flo, fup, fres, sFig=True):
         plt.xlabel('Time (sec)', fontsize = 28, fontweight = 'bold')
         plt.ylabel('Frequency (Hz)', fontsize = 28, fontweight = 'bold')
         # plt.title('Spectrogram', fontsize = 15)
-        plt.savefig('Fig_Spectrogram.jpg', dpi=1200, transparent=True,\
+        plt.savefig('Fig_Scalogram.jpg', dpi=1200, transparent=True,\
             bbox_inches='tight', pad_inches=0.1)
 
         # Averaged Spectrum for X:
@@ -131,7 +135,7 @@ def scaloGramDemo(X, fs, flo, fup, fres, sFig=True):
         plt.ylim(flo, fup)
         plt.ticklabel_format(axis='x', style='sci', scilimits=(-3,3))
         # fig3.subplots_adjust(wspace = 0.4)
-        plt.savefig('Fig_Wavelet_Spectrum_Spectrogram.jpg', dpi=1200, transparent=True,\
+        plt.savefig('Fig_Averaged_Spectrum_Scalogram.jpg', dpi=1200, transparent=True,\
             bbox_inches='tight', pad_inches=0.1)
     else:
         pass
