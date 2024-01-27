@@ -1,12 +1,12 @@
-For scaloGramDemo.py:    
-    Input parameters:            
-         X  : The input signal to be analyzed (N by 1 array).        
-        fs  : The sampling frequency of signal (in Hz).       
-       flo  : Lower bound for spectrum analysis.       
-       fup  : Upper bound for spectrum analysis.      
-      fres  : Frequency resolution in the spectrum.     
-      sFig  : True = Show the figures, False = Do not show the figures
-             (default = True).
+For scaloGramDemo.py:            
+    Input parameters:                    
+         X  : The input signal to be analyzed (N by 1 array).                
+        fs  : The sampling frequency of signal (in Hz).               
+       flo  : Lower bound for spectrum analysis.               
+       fup  : Upper bound for spectrum analysis.              
+      fres  : Frequency resolution in the spectrum.             
+      sFig  : True = Show the figures, False = Do not show the figures        
+             (default = True).        
 
     Output parameters:Outputs:
         Ta  : Times for spectrogram.
@@ -27,8 +27,8 @@ For scaloGramDemo.py:
       Ta2, Fa2, St2, PSD2 = scaloGramDemo(scg, 5, 0.05, 0.6, 0.005, True)
 
 
-For Test Datsets:
-      SCGwithResp.mat: Test data for SCG and respiration signal (from CEBS database).
-      f04sSCGwithResp.mat: Test data for SCG and respiration signal (from experiments in FCU).
-      fingerPPGwithRIIV.mat: Test data for finger PPG and respiration signal (from MIMIC II database).
-      wristPPGwithRIIV.mat: Test data for wrist PPG and respiration signal (from experiments in FCU). 
+For Test Datsets:x                
+        SCGwithResp.mat: Test data for SCG and respiration signal (from CEBS database).                
+        f04sSCGwithResp.mat: Test data for SCG and respiration signal (from experiments in FCU).                
+        fingerPPGwithRIIV.mat: Test data for finger PPG and respiration signal (from MIMIC II database).                
+        wristPPGwithRIIV.mat: Test data for wrist PPG and respiration signal (from experiments in FCU).                 
