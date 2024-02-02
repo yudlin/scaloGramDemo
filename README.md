@@ -24,7 +24,8 @@ For scaloGramDemo.py:
       scg = signal.resample(scg, int(len(scg)*5/100))
       from scaloGramDemo import scaloGramDemo
       Ta1, Fa1, St1, PSD1 = scaloGramDemo(resp, 5, 0.05, 0.6, 0.005, True)
-      Ta2, Fa2, St2, PSD2 = scaloGramDemo(scg, 5, 0.05, 0.6, 0.005, True)
+
+      # To acquire RR from SCG, please first use Gaussian filter.
 
 
 For Test Datsets:(fs = 100 Hz for all signals)                
