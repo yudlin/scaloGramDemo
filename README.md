@@ -27,7 +27,7 @@ For scaloGramDemo.py:
       Ta2, Fa2, St2, PSD2 = scaloGramDemo(scg, 5, 0.05, 0.6, 0.005, True)
 
 
-For Test Datsets:x                
+For Test Datsets:(fs = 100 Hz for all signals)                
         SCGwithResp.mat: Test data for SCG and respiration signal (from CEBS database).                
         f04sSCGwithResp.mat: Test data for SCG and respiration signal (from experiments in FCU).                
         fingerPPGwithRIIV.mat: Test data for finger PPG and respiration signal (from MIMIC II database).                
